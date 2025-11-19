@@ -1,0 +1,664 @@
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.2;
+  text-decoration: none;
+  }
+
+  body{
+    display: flex;
+    flex-direction: column;
+    background-color: darkblue;
+    padding-top: 50px; /* Ajuste  necessário para a altura do cabeçalho para nao ficar por cima do*/
+
+  }
+
+
+  .texto1{
+  color: white;
+  text-align: center;
+  font-size: 40px;
+  font: bold;
+  }
+
+  .texto2{
+  color: #1ee424;
+  text-align: center;
+  font-size: 35px;
+  font: bold;
+  }
+
+  .texto3{
+  color: red;
+  text-align: center;
+  font-size: 21px;
+  }
+
+
+  .barra{
+    width: 90%;
+    height: 8px;
+    background-color: white ;
+    margin: 0 auto;
+  }  
+
+  /* Formulário de filtro */
+  .formulario-filtro {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: rgb(214, 214, 214);
+    border-radius: 5px;
+    max-width: 350px;
+  }
+
+  .formulario-filtro label {
+    flex-basis: 100%;
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+  }
+
+  .formulario-filtro select {
+    flex-basis: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+
+  .formulario-filtro button {
+    flex-basis: 100%;
+    padding: 10px;
+    background-color: darkblue;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .formulario-filtro button:hover {
+    background-color: blue;
+  }
+
+  @media (max-width: 768px) {
+    .formulario-filtro {
+        padding: 5px;
+        max-width: 300px;
+    }
+
+    .formulario-filtro label {
+        font-size: 16px;
+    }
+
+    .formulario-filtro select {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .formulario-filtro button {
+        padding: 8px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .formulario-filtro {
+        padding: 5px;
+        max-width: 250px;
+    }
+
+    .formulario-filtro label {
+        font-size: 14px;
+    }
+
+    .formulario-filtro select {
+        padding: 6px;
+        font-size: 12px;
+    }
+
+    .formulario-filtro button {
+        padding: 6px;
+        font-size: 12px;
+    }
+}
+
+#btn-carregar-produto, #btn-ver-pedidos {
+  display: inline-block; /* Faz os botões ficarem lado a lado */
+  margin: 20px auto; /* Adiciona margem vertical 20px e centraliza horizontalmente */
+  padding: 15px 30px; /* Aumenta o tamanho do botão */
+  font-size: 18px; /* Aumenta o tamanho do texto */
+  color: #0000FF; /* Cor do texto em azul */
+  background-color: #FFFFFF; /* Cor de fundo branca */
+  border: 2px solid #0000FF; /* Borda azul */
+  border-radius: 5px; /* Borda levemente arredondada */
+  cursor: pointer; /* Muda o cursor ao passar por cima */
+  text-align: center; /* Centraliza o texto */
+  text-decoration: none; /* Remove qualquer sublinhado do texto */
+  transition: background-color 0.3s, color 0.3s; /* Transição suave */
+}
+
+#btn-carregar-produto:hover, #btn-ver-pedidos:hover {
+  background-color: #0000FF; /* Muda a cor de fundo para azul ao passar o mouse */
+  color: #FFFFFF; /* Muda a cor do texto para branco ao passar o mouse */
+}
+
+.button-container {
+  text-align: center; /* Centraliza os botões horizontalmente */
+}
+
+#btn-carregar-produto {
+  margin-right: 10px; /* Espaçamento entre os botões */
+}
+
+
+.btn_remover_produto {
+  top: 10px; /* Distância do topo */
+  left: 10px; /* Distância da direita */
+  background-color: red; /* Cor de fundo vermelha */
+  color: white; /* Cor do texto branco */
+  border: none; /* Sem borda */
+  padding: 10px; /* Espaçamento interno */
+  border-radius: 5px; /* Borda arredondada */
+  cursor: pointer; /* Cursor ao passar */
+  display: inline-block; /* Exibir como bloco */
+}
+
+.btn_remover_produto i {
+  font-size: 18px; /* Tamanho do ícone */
+}
+
+  .produtos{
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px; /* Espaçamento entre os produtos */
+  }
+
+  .produtos .produto_card{
+    margin: 0 auto; /* Centraliza horizontalmente */
+    width: 310px;
+    background-color: rgb(223, 223, 223);
+    box-shadow: 0 10px 20px rgb(11, 160, 219);
+    border-radius: 10px;
+    margin-bottom: 50px;
+    overflow: hidden; /* Evita que o conteúdo ultrapasse os limites do card */
+  }
+
+  .produtos .produto_card img{
+    margin-top: 10px;
+    margin-left: 18px;
+    width: 88%;
+    height: 290px;
+    border-radius: 8px;
+  }
+
+  .produtos .produto_card .desc {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 20px;
+  opacity: 0.8;
+  }
+
+  .desc .btn_detalhes {
+  margin-right: 20px; /* Margem para garantir que haja espaço entre o botão e a descrição */
+  }
+
+  .desc span {
+  flex-grow: 1; /* Faz com que a descrição ocupe o espaço restante, empurrando-a para a direita */
+  text-align: right; /* Alinha o texto da descrição à direita */
+  }
+
+  .btn_detalhes {  
+  background-color: cadetblue;
+  font-size: 13px;
+  color: white;
+  padding: 10px;
+  font-weight: 680;
+  border: 5px solid darkblue;
+  border-radius: 20px;
+  }
+
+  .btn_detalhes:hover {
+  background-color: darkblue;
+  color: white;
+  border: 5px solid cadetblue;
+  }
+
+  .produtos .produto_card .titulo{
+    text-align: center;
+    font-weight: 900;
+    font-size: 20px;
+    color: black;
+    padding: 0 20px;
+  }
+  .produtos .produto_card .box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .produtos .produto_card .box .preco{
+    color: blue;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+.remover-item{
+  color: red; 
+  cursor: pointer; 
+  font-size: 28px;
+}
+
+  .div_comprar input{
+  width: 35px;
+  }
+
+  .div_comprar button{
+  text-align: center;
+  margin-left: 10px;
+  background-color: darkblue;
+  font-size: 15px;
+  color: white;
+  padding: 10px;
+  font-weight: 600;
+  border: 5px solid darkblue;
+  border-radius: 10px;
+  }
+
+  .div_comprar button{
+  cursor: pointer;
+  }
+
+/* Media query para telas menores */
+@media (max-width: 768px) {
+
+  .produtos{
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+
+  .produtos .produto_card {
+      width: 240px;
+  }
+
+  .produtos .produto_card img{
+    width: 88%;
+    height: 200px;
+  }
+
+  .btn_detalhes {  
+    font-size: 11px;
+    font-weight: 500;
+    }
+
+  .produtos .produto_card .titulo {
+      font-size: 16px;
+      font-weight: 680;
+  }
+
+  .produtos .produto_card .box .preco{
+    font-size: 15px;
+  }
+
+  .produtos .produto_card .box {
+      padding: 10px;
+  }
+
+  .div_comprar button {
+      font-size: 13px;
+      padding: 8px;
+      font-weight: 400;
+  }
+
+  #btn-carregar-produto, #btn-ver-pedidos {
+    padding: 8px 20px; /* Aumenta o tamanho do botão */
+    font-size: 13px; /* Aumenta o tamanho do texto */
+    display: block; /* Para dispositivos menores, coloca os botões um abaixo do outro */
+    margin: 10px auto; /* Centraliza os botões verticalmente */
+  }
+}
+
+@media (max-width: 595px){
+  
+  #btn_car_fix {
+    font-size: 18px;
+  }
+
+}
+
+  #btn_car_fix {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #3498db;
+  color: white;
+  padding: 15px;
+  border: none;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.3);
+  }
+
+  #btn_car_fix:hover {
+  background-color: blue;
+  }
+
+  /* Modal de Carrinho */
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    background-color: rgba(0,0,0,0.4); /* Cor de fundo com opacidade */
+    padding: 20px;
+    border: 1px solid #ccc;
+    z-index: 999;
+    overflow-y: auto;
+}
+
+
+  .modal-content {
+      background-color: #fefefe; /* Fundo branco */
+      margin: 10% auto; /* Centralizar verticalmente */
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%; /* Largura do conteúdo */
+      border-radius: 10px;
+      position: relative;
+  }
+
+  .modal-content h2{font-size: 25px;}
+
+  .close, .close-pagamento {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+  }
+
+  .close:hover,
+  .close:focus, .close-pagamento:hover,
+  .close-pagamento:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+  }
+
+  #carrinho-itens {
+      max-height: 300px; /* Altura máxima para a lista de itens */
+      overflow-y: auto; /* Rolagem vertical se houver mais itens */
+      margin-bottom: 10px; /* Espaçamento inferior */
+  }
+
+  #carrinho-itens .carrinho-item {
+      display: flex;
+      border-bottom: 1px solid #ddd;
+      padding: 10px 0;
+  }
+
+  .carrinho-item h4{
+    font-size: 20px;
+  }
+
+  .carrinho-item p{
+    font-size: 16px;
+  }
+
+
+  #carrinho-itens img {
+      width: 20%; /* Tamanho da imagem */
+      height: auto; /* Altura automática */
+      margin-right: 10px; /* Espaçamento à direita */
+  }
+
+  #carrinho-itens div {
+      flex-grow: 1; /* Preenchimento flexível */
+  }
+
+  #total {
+      margin-top: 10px; /* Espaçamento superior */
+      text-align: right; /* Alinhamento à direita */
+      font-size: 20px;
+  }
+
+  #btn-comprar {
+      background-color: #4CAF50; /* Cor de fundo verde */
+      color: white; /* Texto branco */
+      border: none; /* Sem borda */
+      padding: 10px 20px; /* Preenchimento */
+      text-align: center; /* Alinhamento central */
+      text-decoration: none; /* Sem sublinhado */
+      display: inline-block; /* Exibir como bloco */
+      font-size: 16px; /* Tamanho da fonte */
+      margin: 4px 2px; /* Margem */
+      cursor: pointer; /* Cursor ponteiro */
+      border-radius: 8px; /* Borda arredondada */
+  }
+
+  #btn-comprar:hover {
+      background-color: #45a049; /* Cor de fundo verde mais escura */
+  }
+  
+  /* Modal de Pagamento */
+.modal-pagamento {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  background-color: rgba(0,0,0,0.4); /* Cor de fundo com opacidade */
+  padding: 20px;
+  border: 1px solid #ccc;
+  z-index: 9999;
+  overflow-y: auto;
+}
+
+.modal-content-pagamento {
+  background-color: #fefefe; /* Fundo branco */
+  margin: 5% auto; /* Centralizar verticalmente */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 60%; /* Largura do conteúdo */
+  border-radius: 10px;
+  position: relative;
+}
+
+.modal-content-pagamento h2 {
+  font-size: 25px;
+}
+
+.payment-options {
+  margin-top: 20px;
+}
+
+.payment-option {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  text-align: left;
+}
+
+.payment-option h3 {
+  margin-top: 0;
+  font-size: 18px;
+}
+
+.payment-option p {
+  font-size: 16px;
+}
+
+.nota{
+  font-size: 16px;
+  color: #4CAF50;
+}
+
+#total-pagamento {
+  margin-top: 20px; /* Espaçamento superior */
+  text-align: right; /* Alinhamento à direita */
+  font-size: 20px;
+}
+
+#realizarPagamentoBtn {
+  background-color: #4CAF50; /* Cor de fundo verde */
+  color: white; /* Texto branco */
+  border: none; /* Sem borda */
+  padding: 10px 20px; /* Preenchimento */
+  text-align: center; /* Alinhamento central */
+  text-decoration: none; /* Sem sublinhado */
+  display: inline-block; /* Exibir como bloco */
+  font-size: 16px; /* Tamanho da fonte */
+  margin: 4px 2px; /* Margem */
+  cursor: pointer; /* Cursor ponteiro */
+  border-radius: 8px; /* Borda arredondada */
+}
+
+#realizarPagamentoBtn:hover {
+  background-color: #45a049; /* Cor de fundo verde mais escura */
+}
+
+/* CSS para botões de seleção de forma de pagamento */
+.select-payment {
+  border: 1px solid #1a73e8;
+  background-color: #ffffff;
+  color: #1a73e8;
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.select-payment.selected {
+  background-color: #1a73e8;
+  color: #ffffff;
+}
+
+  @media (max-width: 768px) {
+  .texto1{
+    font-size: 30px;
+  }
+  
+  .texto2{
+    font-size: 27px;
+  }
+  
+  .texto3{
+    font-size: 14px;
+  }  
+
+  .modal-content, .modal-content-pagamento {
+      width: 80%; /* Largura do conteúdo */
+  }
+
+  .close, .close-pagamento {
+      font-size: 20px;
+  }
+
+  #carrinho-itens {
+      max-height: 100px; /* Altura máxima para a lista de itens */
+  }
+
+  .carrinho-item h4{
+    font-size: 17px;
+  }
+
+  .carrinho-item p{
+    font-size: 14px;
+  }
+
+  #total, #total-pagamento {
+    font-size: 17px;
+}
+
+.modal-content, .modal-content-pagamento h2{font-size: 19px;}
+
+
+  #carrinho-itens img {
+      width: 20%; /* Tamanho da imagem */
+      height: 20%; /* Altura automática */
+      margin-right: 10px; /* Espaçamento à direita */
+  }
+
+
+  #btn-comprar, #realizarPagamentoBtn {
+      font-size: 13px; /* Tamanho da fonte */
+  }
+
+  .payment-option h3 {
+    font-size: 15px;
+  }
+
+  .payment-option p, .nota {
+    font-size: 13px;
+  }
+
+  .remover-item{
+    font-size: 22px;
+  }
+  } 
+
+  @media (max-width: 595px) {
+  
+    .modal, .modal-pagamento {
+    width: 100%;
+    }
+    .modal-content, .modal-content-pagamento {
+        width: 100%; /* Largura do conteúdo */
+    }
+  
+    .close, .close-pagamento {
+        font-size: 18px;
+    }
+  
+    #carrinho-itens {
+        max-height: 150px; /* Altura máxima para a lista de itens */
+    }
+  
+    .carrinho-item h4{
+      font-size: 15px;
+    }
+  
+    .carrinho-item p{
+      font-size: 12px;
+    }
+  
+    #total, #total-pagamento {
+      font-size: 15px;
+  }
+  
+  .modal-content, .modal-content-pagamento h2{font-size: 17px;}
+  
+  
+    #carrinho-itens img {
+        width: 30%; /* Tamanho da imagem */
+        height: 40%; /* Altura automática */
+        margin-right: 10px; /* Espaçamento à direita */
+    }
+  
+  
+    #btn-comprar, #realizarPagamentoBtn {
+        font-size: 12px; /* Tamanho da fonte */
+    }
+    .remover-item{
+      font-size: 19px;
+    }
+
+    } 

@@ -1,0 +1,179 @@
+<?php
+session_start();
+// Conectar ao banco de dados
+include "../include/aceder_base_dados.inc.php";
+
+// Verificar se o formulário foi submetido
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $nome = mysqli_real_escape_string($conn, $_POST["nome"]);
+    $email = mysqli_real_escape_string($conn, $_POST["email"]);
+    $senha = mysqli_real_escape_string($conn, $_POST["senha"]);
+
+    // Verificar se os campos estão preenchidos
+    if (empty($nome) || empty($email) || empty($senha)) {
+        echo "Preencha todos os campos!";
+    } else {
+        // Verificar se as credenciais são válidas
+        $query = "SELECT * FROM utilizadores WHERE nome = '$nome' AND email = '$email' AND senha = '$senha'";
+        $result = mysqli_query($conn, $query);
+        if (mysqli_num_rows($result) > 0) {
+            $utilizador = mysqli_fetch_assoc($result);
+            
+            // Guardar os dados do usuário na sessão
+            $_SESSION['id_utilizador'] = $utilizador['id_utilizador'];
+            $_SESSION['nome'] = $nome;
+
+            echo "Login realizado com sucesso!";
+            header("Location: ../index.php");
+            exit;
+        } else {
+            echo "Credenciais inválidas, tenha a atenção que para fazer o login já tem de ter conta criada.";
+        }
+    }
+}
+?>
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="../img/CFV_icon.ico" type="image/x-icon">
+  <script src="https://kit.fontawesome.com/1165876da6.js" crossorigin="anonymous"></script>
+  <title>Login</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      color: #333;
+    }
+    .container {
+      max-width: 400px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #007bff;
+      text-align: center;
+    }
+    label {
+      display: block;
+      margin-bottom: 8px;
+    }
+    input[type=text], input[type=email], input[type=password] {
+      width: calc(100% - 20px);
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    input[type=submit] {
+      background-color: #007bff;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      width: 100%;
+      margin-top: 10px;
+    }
+    input[type=submit]:hover {
+      background-color: #0056b3;
+    }
+    .password-toggle {
+      cursor: pointer;
+      color: #007bff;
+      font-size: 14px;
+      float: right;
+    }
+    .signup-link {
+      text-align: center;
+      margin-top: 10px;
+    }
+    .signup-link a {
+      color: #007bff;
+      text-decoration: none;
+    }
+    .signup-link a:hover {
+      text-decoration: underline;
+    }
+    .btn-home {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 1000; /* Para garantir que o botão esteja sempre acima de outros conteúdos */
+        background-color: #1a73e8;
+        color: #ffffff;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        border-radius: 50%;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        transition: background-color 0.3s, transform 0.3s;
+        font-size: 30px;
+    }
+
+    .btn-home:hover {
+        background-color: #0d47a1;
+        transform: scale(1.1);
+    }
+     /* Media queries para dispositivos móveis e tablets */
+  @media only screen and (max-width: 600px) {
+    input[type=text], input[type=email], input[type=password] {
+      font-size: 14px; /* Tamanho menor para dispositivos móveis e tablets */
+    }
+    .container h1{
+        font-size: 22px;
+    }
+    .container label, p{
+        font-size: 14px;
+    }
+    .container span{
+        font-size: 13px;
+    }
+    .btn-home{
+        font-size: 20px;
+    }
+  }
+  </style>
+</head>
+<body>
+<a href="../index.php" class="btn-home"><i class="fas fa-home"></i></a>
+  <div class="container">
+    <h1>Login</h1>
+    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" name="nome"><br>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email"><br>
+      <label for="senha">Senha:</label>
+      <input type="password" id="senha" name="senha">
+      <span class="password-toggle" onclick="togglePassword()">Mostrar senha</span><br>
+      <input type="submit" value="Login">
+    </form>
+    <div class="signup-link">
+      <p>Ainda não tem conta? <a href="signup.php">Criar conta</a></p>
+    </div>
+  </div>
+
+  <script>
+    function togglePassword() {
+      var senhaInput = document.getElementById("senha");
+      if (senhaInput.type === "password") {
+        senhaInput.type = "text";
+        document.querySelector(".password-toggle").textContent = "Esconder senha";
+      } else {
+        senhaInput.type = "password";
+        document.querySelector(".password-toggle").textContent = "Mostrar senha";
+      }
+    }
+  </script>
+</body>
+</html>
+
+<?php mysqli_close($conn); ?>

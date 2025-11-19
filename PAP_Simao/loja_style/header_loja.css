@@ -1,0 +1,387 @@
+body {
+  transition: background-color 0.5s ease; /* Transição suave para a cor de fundo */
+  padding-top: 100px; /* Espaço superior para acomodar o cabeçalho */
+}
+
+/* Estilos do cabeçalho */
+.cabecalho {
+  background-color: rgb(223, 223, 223); /* Cor de fundo do cabeçalho */
+  height: 100px; /* Altura do cabeçalho */
+  display: flex; /* Flex container para alinhamento dos itens */
+  padding: 24px; /* Espaçamento interno do cabeçalho */
+  justify-content: space-between; /* Distribui os itens igualmente com espaço entre eles */
+  align-items: center; /* Centraliza verticalmente os itens */
+  position: fixed; /* Fixa o cabeçalho na parte superior da tela */
+  top: 0; /* Distância do topo */
+  width: 100%; /* Largura total */
+  z-index: 1000; /* Z-index para garantir que o cabeçalho fique acima de outros elementos */
+  transition: top 0.3s; /* Transição suave para o topo */
+}
+
+.logo-container {
+  display: flex; /* Flex container para alinhamento dos itens */
+  align-items: center; /* Centraliza verticalmente os itens */
+  margin-left: 20px; /* Margem à esquerda */
+}
+
+#cabecalho-imagem {
+  width: 64px; /* Largura da imagem */
+  height: 70px; /* Altura da imagem */
+  margin-right: 10px; /* Margem à direita */
+}
+
+.club-info {
+  display: flex; /* Flex container para alinhamento dos itens */
+  flex-direction: column; /* Empilha os itens verticalmente */
+  align-items: flex-start; /* Alinha à esquerda */
+  color: darkblue; /* Cor do texto */
+  margin-left: 10px; /* Margem à esquerda */
+}
+
+.club-name {
+  font-size: 24px; /* Tamanho da fonte */
+  font-weight: bold; /* Negrito */
+}
+
+.club-since {
+  font-size: 12px; /* Tamanho da fonte */
+  color: #3498db; /* Cor do texto */
+  margin-left: auto; /* Empurra o texto para a direita */
+}
+
+/* Estilo aplicado quando passa o mouse sobre logo-container */
+.logo-container:hover .club-since {
+  font-weight: bold; /* Texto em negrito */
+  font-size: 14px; /* Tamanho da fonte */
+}
+
+.logo-container:hover #cabecalho-imagem {
+  width: 68px; /* Largura da imagem aumentada */
+  height: 74px; /* Altura da imagem aumentada */
+  margin-right: 10px; /* Margem à direita */
+}
+
+.cabecalho-menu {
+  display: flex; /* Flex container para alinhamento dos itens */
+  justify-content: center; /* Centraliza os itens horizontalmente */
+  gap: 32px; /* Espaço entre os itens */
+  flex-grow: 1; /* Cresce para ocupar o espaço disponível */
+}
+
+.cabecalho-menu-item {
+  font-family: 'Sarala', sans-serif; /* Fonte do texto */
+  color: darkblue; /* Cor do texto */
+  font-size: 18px; /* Tamanho da fonte */
+  cursor: pointer; /* Cursor do mouse */
+}
+
+.cabecalho-menu-item:hover {
+  font-weight: bold; /* Texto em negrito ao passar o mouse */
+  text-decoration: underline; /* Sublinhado ao passar o mouse */
+}
+
+.cabecalho-menu-nome {
+  color: darkblue; /* Cor do texto */
+  font-weight: bold; /* Negrito */
+  font-size: 18px; /* Tamanho da fonte */
+}
+
+.user_simbolo {
+  margin-right: -25px; /* Margem negativa para ajuste */
+  color: #3498db; /* Cor do ícone */
+}
+
+.cabecalho-menu-login {
+  font-family: 'Sarala', sans-serif; /* Fonte do texto */
+  color: darkblue; /* Cor do texto */
+  font-size: 18px; /* Tamanho da fonte */
+  cursor: pointer; /* Cursor do mouse */
+}
+
+.cabecalho-menu-login:hover {
+  font-style: italic; /* Texto em itálico ao passar o mouse */
+  text-decoration: underline; /* Sublinhado ao passar o mouse */
+}
+
+.barra_header {
+  color: #3498db; /* Cor do texto */
+  font-weight: bold; /* Negrito */
+  margin-left: -25px; /* Margem à esquerda */
+  margin-right: -25px; /* Margem à direita */
+}
+
+.submenu {
+  display: none; /* Inicia oculto */
+  position: absolute; /* Posicionamento absoluto */
+  background-color: #3498db; /* Cor de fundo */
+  top: calc(100%); /* Posiciona abaixo do item pai */
+  left: 0; /* Alinha à esquerda */
+  width: 100%; /* Largura total */
+  text-align: center; /* Alinhamento central */
+  justify-content: space-between; /* Distribui os itens igualmente com espaço entre eles */
+  padding: 10px 0; /* Espaçamento interno */
+  z-index: 10; /* Z-index para empilhamento */
+  opacity: 0; /* Opacidade inicial */
+}
+
+.submenu.show {
+  display: flex; /* Mostra o submenu */
+  opacity: 1; /* Opacidade total */
+}
+
+.submenu-item {
+  display: inline-block; /* Exibe como bloco em linha */
+  color: white; /* Cor do texto */
+  position: relative; /* Posicionamento relativo */
+}
+
+.align-left {
+  flex: 1; /* Ocupa espaço disponível */
+  text-align: left; /* Alinha à esquerda */
+  margin-left: 50px; /* Margem à esquerda */
+}
+
+.align-center {
+  flex: 1; /* Ocupa espaço disponível */
+  text-align: center; /* Alinha ao centro */
+}
+
+.align-right {
+  flex: 1; /* Ocupa espaço disponível */
+  text-align: right; /* Alinha à direita */
+  margin-right: 50px; /* Margem à direita */
+}
+
+.lista {
+  list-style: circle; /* Estilo do marcador de lista */
+  margin-left: 10px; /* Margem à esquerda */
+  list-style-position: inside; /* Posiciona dentro do contêiner */
+}
+
+#campeonatos-align {
+  position: relative; /* Posicionamento relativo */
+  left: 39px; /* Deslocamento à direita */
+}
+
+.lista a {
+  color: white; /* Cor do texto */
+  text-decoration: none; /* Sem sublinhado padrão */
+}
+
+.lista a:hover {
+  text-decoration: underline; /* Sublinhado ao passar o mouse */
+}
+
+.submenu-campeonatos {
+  display: none; /* Inicia oculto */
+  top: calc(100% + 10px); /* Posiciona abaixo com espaço */
+  margin-left: 50px; /* Margem à esquerda */
+  background-color: #3498db; /* Cor de fundo */
+  width: 100%; /* Largura total */
+  opacity: 0; /* Opacidade inicial */
+  transition: opacity 0.3s ease, display 0.3s ease; /* Transições suaves */
+}
+
+.submenu-campeonatos.show {
+  display: block; /* Exibe o submenu */
+  opacity: 1; /* Opacidade total */
+}
+
+.submenu-campeonatos ul {
+  list-style-type: none; /* Remove marcadores de lista */
+  padding: 0; /* Sem preenchimento interno */
+  margin: 0; /* Sem margem */
+}
+
+.submenu-campeonatos ul li {
+  margin-bottom: 5px; /* Margem inferior */
+}
+
+.submenu-campeonatos a {
+  color: white; /* Cor do texto */
+  text-decoration: none; /* Sem sublinhado */
+  display: block; /* Exibe como bloco */
+}
+
+.submenu-campeonatos a:hover {
+  text-decoration: underline; /* Sublinhado ao passar o mouse */
+}
+
+/* Rotação da seta para cima */
+.chevron-up {
+  transform: rotate(180deg); /* Rotaciona 180 graus */
+  transition: transform 0.5s ease; /* Transição suave */
+}
+
+/* Estilo do botão do menu */
+.menu-button {
+  display: none; /* Inicia oculto */
+  background: none; /* Sem fundo */
+  border: none; /* Sem borda */
+  padding: 10px; /* Preenchimento interno */
+  cursor: pointer; /* Cursor do mouse */
+  font-size: 20px; /* Tamanho da fonte */
+}
+
+.menu-button i {
+  color: #3498db; /* Cor do ícone */
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  /* Oculta o menu principal */
+  .cabecalho-menu {
+    display: none; /* Oculta */
+  }
+
+  /* Mostra o botão do menu */
+  .menu-button {
+    display: block; /* Exibe */
+    margin-right: 20px; /* Margem à direita */
+  }
+
+  .logo-container {
+    display: flex; /* Flex container para alinhamento dos itens */
+    align-items: center; /* Centraliza verticalmente os itens */
+    flex-grow: 1; /* Cresce para ocupar o espaço disponível */
+  }
+
+  /* Ajusta a ordem dos elementos */
+  .menu-button {
+    order: 2; /* Ordem 2 */
+  }
+
+  .logo-container {
+    order: 1; /* Ordem 1 */
+  }
+
+  /* Ajusta o layout do cabeçalho */
+  .cabecalho {
+    flex-direction: row; /* Empilha horizontalmente */
+  }
+
+  #cabecalho-imagem {
+    width: 51px; /* Largura da imagem ajustada */
+    height: 57px; /* Altura da imagem ajustada */
+  }
+
+  /* Alinha o logo e o texto do clube à esquerda */
+  .logo-container {
+    justify-content: flex-start; /* Justifica à esquerda */
+  }
+
+  .club-name {
+    font-size: 16px; /* Tamanho da fonte ajustado */
+  }
+
+  .club-since {
+    font-size: 10px; /* Tamanho da fonte ajustado */
+  }
+
+  /* Estilo aplicado quando passa o mouse sobre logo-container */
+  .logo-container:hover .club-since {
+    font-size: 12px; /* Tamanho da fonte aumentado */
+    font-weight: bold; /* Texto em negrito */
+  }
+
+  .logo-container:hover #cabecalho-imagem {
+    width: 55px; /* Largura da imagem aumentada */
+    height: 61px; /* Altura da imagem aumentada */
+    margin-right: 10px; /* Margem à direita */
+  }
+}
+
+/* Links que aparecem quando se clica no botão */
+#link-list {
+  position: fixed; /* Posicionamento fixo */
+  top: 43%; /* Posiciona no meio verticalmente */
+  left: 50%; /* Posiciona no meio horizontalmente */
+  transform: translate(-50%, -50%); /* Centraliza */
+  text-align: center; /* Alinhamento central */
+}
+
+#link-list a {
+  color: white; /* Cor do texto */
+}
+
+#link-list a:hover {
+  font-weight: bold; /* Texto em negrito ao passar o mouse */
+  text-decoration: underline; /* Sublinhado ao passar o mouse */
+}
+
+.equipas-toggle {
+  margin-top: 15px; /* Margem superior */
+  color: white; /* Cor do texto */
+}
+
+.equipas-toggle:hover {
+  font-weight: bold; /* Texto em negrito ao passar o mouse */
+  text-decoration: underline; /* Sublinhado ao passar o mouse */
+}
+
+/* CSS para o submenu das equipas */
+.equipas-submenu_telapequena {
+  margin-left: 10%; /* Margem à esquerda */
+  font-size: 15px; /* Tamanho da fonte */
+  display: none; /* Inicia oculto */
+  position: absolute; /* Posicionamento absoluto */
+  background-color: blue; /* Cor de fundo */
+  z-index: 1; /* Z-index para empilhamento */
+  width: 300px; /* Largura */
+  transition: all 0.3s ease; /* Transições suaves */
+  transform: translateX(-27%); /* Centraliza verticalmente */
+}
+
+.equipas-submenu_telapequena ul {
+  list-style-type: none; /* Remove marcadores de lista */
+  padding: 0; /* Sem preenchimento interno */
+}
+
+.equipas-submenu_telapequena ul li {
+  padding: 10px; /* Espaçamento interno */
+  color: white; /* Cor do texto */
+  text-align: center; /* Alinhamento central */
+}
+
+/* Exibe o submenu quando a classe 'show' é aplicada */
+.equipas-submenu_telapequena.show {
+  display: block; /* Exibe */
+}
+
+/* Submenu das competições para telas pequenas */
+.comp-submenu_telapequena {
+  margin-left: 8%; /* Margem à esquerda */
+  font-size: 13px; /* Tamanho da fonte */
+  display: none; /* Inicia oculto */
+  position: absolute; /* Posicionamento absoluto */
+  background-color: blue; /* Cor de fundo */
+  z-index: 1; /* Z-index para empilhamento */
+  width: 300px; /* Largura */
+  transition: all 0.3s ease; /* Transições suaves */
+  transform: translateX(-24%); /* Centraliza verticalmente */
+}
+
+.comp-submenu_telapequena.show {
+  display: block; /* Exibe */
+}
+
+.comp-submenu_telapequena ul {
+  list-style-type: none; /* Remove marcadores de lista */
+  padding: 0; /* Sem preenchimento interno */
+  text-align: center; /* Alinhamento central */
+}
+
+.comp-submenu_telapequena ul li {
+  margin-top: 20px; /* Margem superior */
+  color: white; /* Cor do texto */
+}
+
+.comp-toggle {
+  margin-top: 10px; /* Margem superior */
+  color: white; /* Cor do texto */
+}
+
+.comp-toggle:hover {
+  font-weight: bold; /* Texto em negrito ao passar o mouse */
+  text-decoration: underline; /* Sublinhado ao passar o mouse */
+}

@@ -1,0 +1,68 @@
+/* '*' (Asterisco ou Universal Selector)
+O seletor universal * seleciona todos os elementos de uma página HTML.
+serve mais para aplicar estilos de forma global a todos os elementos. Isso pode ser útil para redefinir margens
+e preenchimentos padrão de todos os elementos, por exemplo.*/
+
+/* Global Styles */
+* {
+  margin: 0; /* Remove a margem padrão de todos os elementos */
+  padding: 0; /* Remove o preenchimento padrão de todos os elementos */
+  box-sizing: border-box; /* Inclui a borda e o preenchimento na largura e altura totais dos elementos */
+  font-family: Arial, Helvetica, sans-serif; /* Define a fonte padrão para todos os elementos */
+  line-height: 1.2; /* Define a altura da linha padrão para todos os elementos */
+  text-decoration: none; /* Remove a decoração de texto (como sublinhado) para todos os elementos */
+}
+
+body {
+  display: flex; /* Define o layout do corpo como flexbox */
+  flex-direction: column; /* Define a direção dos itens flexíveis como coluna */
+  height: 100vh; /* Define a altura do corpo como 100% da altura da janela de visualização */
+  background-color: white; /* Define a cor de fundo do corpo como branco */
+}
+
+/* Conteudo Styles */
+.conteudo {
+  margin-bottom: 48px; /* Define a margem inferior do conteúdo */
+  border-top: 0.4px solid #FFF2E7; /* Adiciona uma borda superior ao conteúdo */
+}
+
+.conteudo-titulo {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Define a fonte para o título do conteúdo */
+  margin: 20px; /* Adiciona uma margem ao redor do título do conteúdo */
+  text-align: center; /* Centraliza o texto do título */
+  font-size: 100px; /* Define o tamanho da fonte do título */
+}
+
+.conteudo-subtitulo {
+  font-family: Verdana, Geneva, Tahoma, sans-serif; /* Define a fonte para o subtítulo do conteúdo */
+  margin: 20px; /* Adiciona uma margem ao redor do subtítulo do conteúdo */
+  text-align: center; /* Centraliza o texto do subtítulo */
+  font-size: 25px; /* Define o tamanho da fonte do subtítulo */
+}
+
+.barra {
+  width: 90%; /* Define a largura da barra */
+  height: 8px; /* Define a altura da barra */
+  background-color: darkblue; /* Define a cor de fundo da barra */
+  margin: 0 auto; /* Centraliza a barra horizontalmente */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 808px) {
+  .conteudo-titulo {
+    font-size: 40px; /* Reduz o tamanho da fonte do título em telas pequenas */
+  }
+
+  .conteudo-subtitulo {
+    font-size: 20px; /* Reduz o tamanho da fonte do subtítulo em telas pequenas */
+  }
+
+  #imagens .row {
+    display: flex; /* Define o layout das linhas de imagens como flexbox */
+    flex-direction: column; /* Alinha os itens em coluna em telas pequenas */
+  }
+
+  #imagens .row div {
+    width: 100%; /* Define a largura dos itens de imagem como 100% em telas pequenas */
+  }
+}

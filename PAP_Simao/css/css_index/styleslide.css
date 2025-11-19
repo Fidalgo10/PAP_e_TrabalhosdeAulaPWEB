@@ -1,0 +1,88 @@
+/* Estilos para o container do slide */
+.slideshow-container {
+  text-align: center; /* Centraliza o texto dentro do container do slide */
+  position: relative; /* Define a posição como relativa para elementos filhos posicionados */
+  display: flex; /* Define o layout do container como flexbox */
+  flex-direction: column; /* Define a direção dos itens flexíveis como coluna */
+  justify-content: center; /* Centraliza verticalmente os itens flexíveis */
+  align-items: center; /* Centraliza horizontalmente os itens flexíveis */
+  overflow: hidden; /* Oculta o conteúdo que ultrapassa os limites do container */
+  max-width: 100%; /* Garante que o container do slide não ultrapasse a largura da tela */
+}
+
+/* Estilos para as imagens do slide */
+.slide img {
+  width: 100%; /* Define a largura das imagens como 100% do container */
+  height: auto; /* Mantém a proporção da imagem */
+  max-width: 100%; /* Garante que a imagem não aumente além do seu tamanho original */
+}
+
+/* Estilos para os botões de avançar e retroceder */
+.anterior, .proximo {
+  position: absolute; /* Define a posição como absoluta para o posicionamento dentro do container */
+  top: 50%; /* Centraliza verticalmente os botões dentro do container */
+  transform: translateY(-50%); /* Ajusta a posição vertical para o centro exato */
+  padding: 10px 20px; /* Adiciona preenchimento interno aos botões */
+  background-color: darkblue; /* Define a cor de fundo dos botões */
+  color: white; /* Define a cor do texto dos botões */
+  border: none; /* Remove a borda dos botões */
+  cursor: pointer; /* Altera o cursor para indicar que o elemento é clicável */
+  z-index: 2; /* Garante que os botões fiquem acima dos outros elementos */
+  transition: background-color 0.3s, color 0.3s; /* Adiciona transição suave para mudanças de cor */
+}
+
+.anterior {
+  left: 10px; /* Posiciona o botão "anterior" à esquerda */
+}
+
+.proximo {
+  right: 10px; /* Posiciona o botão "próximo" à direita */
+}
+
+.anterior:hover, .proximo:hover {
+  background-color: #bbb; /* Altera a cor de fundo dos botões ao passar o mouse */
+  color: blue; /* Altera a cor do texto dos botões ao passar o mouse */
+}
+
+/* Estilos para os indicadores de ponto */
+.dot-container {
+  text-align: center; /* Centraliza os indicadores de ponto */
+  margin-top: 10px; /* Adiciona margem superior aos indicadores */
+}
+
+.dot {
+  cursor: pointer; /* Altera o cursor para indicar que o elemento é clicável */
+  height: 15px; /* Define a altura dos pontos */
+  width: 15px; /* Define a largura dos pontos */
+  margin: 0 2px; /* Adiciona margem horizontal entre os pontos */
+  background-color: #bbb; /* Define a cor de fundo dos pontos */
+  border-radius: 50%; /* Arredonda as bordas dos pontos */
+  display: inline-block; /* Define o layout dos pontos como inline-block */
+  transition: background-color 0.6s ease; /* Adiciona transição suave para mudanças de cor */
+}
+
+/* Estilos para o ponto ativo */
+.active, .dot:hover {
+  background-color: blue; /* Altera a cor de fundo do ponto ativo ou ao passar o mouse */
+}
+
+/* Mídia query para dispositivos com largura máxima de 768px */
+@media screen and (max-width: 768px) {
+  .slideshow-container {
+    display: flex; /* Define o layout do container como flexbox */
+    flex-direction: column; /* Alinha os itens em coluna em telas pequenas */
+    align-items: center; /* Centraliza horizontalmente os itens flexíveis */
+  }
+
+  .anterior, .proximo {
+    position: relative; /* Define a posição como relativa para posicionamento dentro do container */
+    display: inline-block; /* Define o layout dos botões como inline-block */
+    margin: 10px 10px; /* Adiciona margem ao redor dos botões */
+    top: 0; /* Remove o posicionamento vertical */
+    transform: none; /* Remove a transformação vertical */
+  }
+
+  .dot-container {
+    order: 1; /* Garante que os pontos fiquem abaixo dos botões de navegação em telas pequenas */
+  }
+}

@@ -1,0 +1,111 @@
+* {
+  margin: 0; /* Remove margens padrão */
+  padding: 0; /* Remove preenchimento padrão */
+  box-sizing: border-box; /* Garante que a largura e altura incluem bordas e preenchimentos */
+  font-family: Arial, Helvetica, sans-serif; /* Define a família de fontes */
+  line-height: 1.2; /* Define a altura da linha */
+  text-decoration: none; /* Remove decoração de link padrão */
+}
+
+body {
+  display: flex; /* Usa o modelo de layout flexível */
+  font-family: Arial, Helvetica, sans-serif; /* Define a família de fontes para o corpo */
+  flex-direction: column; /* Define a direção dos itens flexíveis */
+  height: 100vh; /* Define a altura para ocupar toda a altura da viewport */
+  background-color: white; /* Define a cor de fundo */
+}
+
+.texto1 {
+  margin-top: -50px; /* Desloca o texto para cima */
+  color: darkblue; /* Define a cor do texto */
+  text-align: center; /* Centraliza o texto */
+  font-size: 40px; /* Define o tamanho da fonte */
+  font: bold; /* Define a espessura da fonte */
+}
+
+.container {
+  display: flex; /* Usa o modelo de layout flexível */
+  flex-wrap: wrap; /* Permite que os itens quebrem para uma nova linha conforme necessário */
+  justify-content: space-between; /* Distribui os itens com espaçamento entre eles */
+  padding: 20px; /* Adiciona preenchimento interno */
+}
+
+.box {
+  margin: 0 auto; /* Centraliza horizontalmente */
+  text-align: center; /* Centraliza o texto */
+  width: 28%; /* Define a largura da caixa */
+  height: fit-content; /* Ajusta a altura conforme o conteúdo */
+  margin-bottom: 75px; /* Adiciona espaço na parte inferior */
+  padding: 10px; /* Adiciona preenchimento interno */
+  box-sizing: border-box; /* Garante que a largura e altura incluem bordas e preenchimentos */
+  border: 3px solid darkblue; /* Adiciona uma borda sólida com largura e cor especificadas */
+  justify-content: center; /* Centraliza o conteúdo verticalmente */
+  align-items: center; /* Centraliza o conteúdo horizontalmente */
+}
+
+.box img {
+  margin: 0 auto; /* Centraliza horizontalmente */
+  display: block; /* Define a imagem como um bloco */
+  width: 100%; /* Define a largura da imagem */
+}
+
+.box .img_simbolo {
+  width: 70%; /* Define a largura da imagem */
+  height: 50%; /* Define a altura da imagem */
+}
+
+.box .img_estatutos {
+  width: 70%; /* Define a largura da imagem */
+  height: 10%; /* Define a altura da imagem */
+}
+
+.box h2 {
+  margin-top: 20px; /* Adiciona espaço na parte superior */
+  margin-bottom: 20px; /* Adiciona espaço na parte inferior */
+  font-size: 20px; /* Define o tamanho da fonte */
+}
+
+.box p {
+  margin-top: 20px; /* Adiciona espaço na parte superior */
+  margin-bottom: 20px; /* Adiciona espaço na parte inferior */
+  font-size: 16px; /* Define o tamanho da fonte */
+}
+
+@media (max-width: 930px) {
+  .box {
+      margin: 0 auto; /* Centraliza horizontalmente */
+      margin-bottom: 75px; /* Adiciona espaço na parte inferior */
+  }
+
+  .box h2 {
+      font-size: 18px; /* Define o tamanho da fonte */
+  }
+
+  .box p {
+      font-size: 14px; /* Define o tamanho da fonte */
+  }
+}
+
+@media (max-width: 890px) {
+  .texto1 {
+      font-size: 30px; /* Define o tamanho da fonte */
+  }
+
+  .container {
+      justify-content: space-around; /* Distribui os itens com espaçamento ao redor */
+  }
+
+  .box {
+      width: 40%; /* Define a largura da caixa */
+  }
+}
+
+@media (max-width: 681px) {
+  .texto1 {
+      font-size: 25px; /* Define o tamanho da fonte */
+  }
+
+  .box {
+      width: 80%; /* Define a largura da caixa */
+  }
+}

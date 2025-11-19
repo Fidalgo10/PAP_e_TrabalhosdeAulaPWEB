@@ -1,0 +1,203 @@
+/* Rodape Styles */
+
+/* Estilos gerais para o rodapé */
+footer {
+  display: flex; /* Utiliza o modelo de layout flexbox */
+  justify-content: center; /* Centraliza os itens horizontalmente */
+  align-items: center; /* Centraliza os itens verticalmente */
+  margin-top: auto; /* Mantém o rodapé no final da página */
+  background-color: rgb(223, 223, 223); /* Cor de fundo do rodapé */
+  color: darkblue; /* Cor do texto */
+  flex-wrap: wrap; /* Permite que os itens do rodapé quebrem para a próxima linha em telas menores */
+}
+
+/* Estilos para as colunas dentro do rodapé */
+footer .footer-col {
+  flex: 1; /* Ocupa o espaço disponível igualmente */
+  min-width: 200px; /* Largura mínima das colunas */
+  margin: 20px; /* Espaçamento entre as colunas */
+  text-align: center; /* Alinhamento do texto no centro */
+}
+
+/* Estilos para links de email no rodapé */
+footer a[href^="mailto"] {
+  color: darkblue; /* Define a cor do link de email */
+  text-decoration: none; /* Remove o sublinhado padrão */
+  font-weight: bold; /* Define o texto em negrito */
+}
+
+/* Efeito hover para links de email */
+footer a[href^="mailto"]:hover {
+  transition: color 0.4s, text-decoration 0.4s; /* Adiciona uma transição suave */
+  color: rgb(179, 179, 179); /* Muda a cor do texto para cinza */
+  text-decoration: underline; /* Sublinha o texto */
+}
+
+/* Estilos para títulos no rodapé */
+footer h4,
+footer .titulo_rodape {
+  font-weight: bold; /* Define o texto em negrito */
+  font-size: 22px; /* Tamanho da fonte */
+  margin-top: 14px; /* Espaçamento acima */
+  margin-bottom: 20px; /* Espaçamento abaixo */
+  color: #3498db; /* Cor do título */
+}
+
+/* Ajustes específicos para h4 no rodapé */
+footer h4 {
+  margin-top: 5px; /* Ajuste fino de espaçamento */
+  margin-bottom: 30px; /* Ajuste fino de espaçamento */
+}
+
+/* Estilos para os ícones de redes sociais */
+footer .links {
+  display: flex; /* Utiliza o modelo de layout flexbox */
+  justify-content: center; /* Centraliza os itens horizontalmente */
+  gap: 16px; /* Espaçamento entre os ícones */
+}
+
+/* Estilos para cada ícone de rede social */
+footer .links a {
+  height: 44px; /* Altura dos ícones */
+  width: 44px; /* Largura dos ícones */
+  display: inline-flex; /* Alinha os ícones horizontalmente */
+  justify-content: center; /* Centraliza os ícones horizontalmente */
+  align-items: center; /* Centraliza os ícones verticalmente */
+  color: white; /* Cor do ícone */
+  background-color: darkblue; /* Cor de fundo do ícone */
+  border-radius: 50%; /* Borda circular para o ícone */
+  transition: background-color 0.4s; /* Transição suave para mudança de cor de fundo */
+}
+
+/* Efeito hover para ícones de redes sociais */
+footer .links a:hover {
+  background-color: #4d4f55; /* Cor de fundo ao passar o mouse */
+  color: white; /* Cor do ícone ao passar o mouse */
+}
+
+/* Estilos para título de localizações no rodapé */
+footer #rodape_local {
+  font-size: 22px; /* Tamanho da fonte */
+  margin-top: 14px; /* Espaçamento acima */
+  margin-bottom: 14px; /* Espaçamento abaixo */
+  font-weight: bold; /* Define o texto em negrito */
+}
+
+/* Estilos para parágrafos de localizações no rodapé */
+footer #paragrafo_local {
+  font-size: 15px; /* Tamanho da fonte */
+  color: darkblue; /* Cor do texto */
+}
+
+/* Estilos para o container de localizações no rodapé */
+footer #localizacoes {
+  display: flex; /* Utiliza o modelo de layout flexbox */
+  justify-content: space-between; /* Distribui as colunas igualmente */
+  flex-wrap: wrap; /* Permite que as colunas quebrem para a próxima linha em telas menores */
+}
+
+/* Estilos para cada coluna de localizações no rodapé */
+footer #localizacoes .coluna {
+  width: calc(50% - 40px); /* Largura de 50% com espaço entre as colunas */
+}
+
+/* Estilos específicos para a coluna da sede no rodapé */
+footer #sede,
+footer #estadio {
+  width: 100%; /* Largura total para se adaptar à largura do contêiner pai em telas menores */
+}
+
+/* Estilos para a seção de parceiros no rodapé */
+footer .parceiros {
+  background-color: #7dcbff; /* Cor de fundo para o div de parceiros */
+  padding: 20px; /* Espaçamento interno */
+  display: flex; /* Utiliza o modelo de layout flexbox */
+  justify-content: space-around; /* Distribui os logos igualmente */
+  align-items: center; /* Centraliza os logos verticalmente */
+  flex-wrap: wrap; /* Permite que os logos quebrem para a próxima linha em telas menores */
+  margin-top: 20px; /* Espaçamento acima */
+  margin-bottom: 20px; /* Espaçamento abaixo */
+}
+
+/* Estilos para as imagens de parceiros no rodapé */
+footer .parceiros img {
+  max-width: 100px; /* Largura máxima das imagens dos parceiros */
+  margin: 10px; /* Espaçamento entre as imagens */
+  transition: max-height 0.4s, max-width 0.4s; /* Transição suave para alterações de tamanho */
+  margin-top: 30px; /* Espaçamento acima */
+}
+
+/* Efeito hover para imagens de parceiros no rodapé */
+footer .parceiros img:hover {
+  transform: scale(1.1); /* Aumenta em 10% quando o mouse passa por cima */
+}
+
+/* Media Queries para Responsividade */
+
+/* Estilos para telas menores que 808px */
+@media (max-width: 808px) {
+  /* Ajustes específicos para o rodapé em telas menores */
+  footer {
+    flex-direction: column; /* Altera a direção do flexbox para empilhar os elementos */
+    text-align: center; /* Centraliza o texto */
+    align-items: center; /* Centraliza os itens no eixo vertical */
+    padding: 10px; /* Adiciona padding interno ao rodapé */
+  }
+
+  /* Ajustes de fonte para o rodapé em telas menores */
+  footer p,
+  footer #paragrafo_local,
+  .links {
+    font-size: 14px; /* Tamanho da fonte reduzido */
+  }
+
+  /* Ajustes de fonte para títulos no rodapé em telas menores */
+  footer h4,
+  footer .titulo_rodape,
+  footer #rodape_local {
+    font-size: 16px; /* Tamanho da fonte ajustado */
+  }
+
+  /* Ajustes para ícones de redes sociais em telas menores */
+  footer .links a {
+    height: 35px; /* Altura reduzida */
+    width: 35px; /* Largura reduzida */
+  }
+
+  /* Ajustes de margem vertical para colunas no rodapé em telas menores */
+  footer .footer-col {
+    margin: 10px 0; /* Reduz a margem vertical */
+  }
+
+  /* Ajustes para o layout de localizações em telas menores */
+  footer #localizacoes {
+    flex-direction: column; /* Empilha as colunas uma sobre a outra */
+  }
+
+  /* Ajustes para colunas de localizações em telas menores */
+  footer #localizacoes .coluna {
+    width: 100%; /* Largura total para ocupar a largura do contêiner pai */
+    margin: 10px 0; /* Reduz a margem vertical */
+  }
+
+  /* Ajustes específicos para colunas da sede e estádio em telas menores */
+  footer #sede,
+  footer #estadio {
+    width: 100%; /* Largura total para se adaptar à largura do contêiner pai */
+  }
+}
+
+/* Estilos para telas menores que 600px */
+@media (max-width: 600px) {
+  /* Ajustes para a seção de parceiros em telas muito pequenas */
+  footer .parceiros {
+    flex-direction: column; /* Empilha os logos verticalmente */
+    text-align: center; /* Centraliza o texto */
+  }
+
+  /* Ajustes para imagens de parceiros em telas muito pequenas */
+  footer .parceiros img {
+    max-width: 35%; /* Reduz a largura máxima das imagens */
+    max-height: 80px; /* Reduz a altura máxima das imagens */
+  }
+}

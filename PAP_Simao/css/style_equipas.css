@@ -1,0 +1,289 @@
+/* Definições gerais */
+*{
+    margin: 0; /* Zera as margens */
+    padding: 0; /* Zera o preenchimento */
+    box-sizing: border-box; /* Garante que o padding e a borda não alterem as dimensões dos elementos */
+    font-family: Arial, Helvetica, sans-serif; /* Define a fonte padrão */
+    line-height: 1.2; /* Define a altura da linha para melhor legibilidade */
+	text-decoration: none; /* Remove sublinhado de links */
+}
+
+/* Estilos para o corpo da página */
+body{
+    display: flex; /* Utiliza um layout flexível */
+    font-family: Arial, Helvetica, sans-serif; /* Define a fonte padrão */
+    flex-direction: column; /* Alinha os elementos em coluna */
+    height: 100vh; /* Define a altura do corpo da página para ocupar toda a altura visível */
+    background-color: white; /* Define a cor de fundo como branca */
+}
+
+/* Estilos para o título principal do conteúdo */
+.conteudo-titulo{
+    margin-top: 40px; /* Margem superior do título */
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Define uma fonte alternativa */
+	margin-bottom: 40px; /* Margem inferior do título */
+	text-align: center; /* Alinhamento centralizado */
+	font-size: 75px; /* Tamanho da fonte */
+    color: darkblue; /* Cor do texto */
+}
+
+/* Estilos para a imagem da equipe sénior */
+#equipa_benjamins, #equipa_juniores, #equipa_seniores{
+    width: 800px; /* Largura da imagem */
+    height: 500px; /* Altura da imagem */
+}
+
+/* Estilos para o subtítulo do conteúdo */
+.conteudo-subtitulo{
+	font-family: Verdana; /* Define a fonte */
+	margin: 20px; /* Margem ao redor do subtítulo */
+	font-size: 20px; /* Tamanho da fonte */
+    color: blue; /* Cor do texto */
+}
+
+/* Estilos para o título da seção de jogadores */
+.titulo_jogadores {
+    display: flex; /* Utiliza um layout flexível */
+    align-items: center; /* Alinha os itens ao centro verticalmente */
+    justify-content: center; /* Alinha os itens ao centro horizontalmente */
+}
+
+/* Estilos para o texto do título */
+.word {
+    margin: 0 10px; /* Margem dos lados do texto */
+    color: blue; /* Cor do texto */
+    font-family: Verdana, Geneva, Tahoma, sans-serif; /* Define a fonte */
+    font-size: 50px; /* Tamanho da fonte */
+}
+
+/* Estilos para a linha horizontal dos jogadores */
+.hr_jogadores {
+    border: 0; /* Remove a borda */
+    height: 10px; /* Altura da linha */
+    background-color: darkblue; /* Cor de fundo da linha */
+    width: 50%; /* Largura da linha */
+}
+
+/* Estilos para o container dos jogadores */
+.container {
+    display: flex; /* Utiliza um layout flexível */
+    flex-direction: column; /* Alinha os elementos em coluna */
+    align-items: center; /* Alinha os itens ao centro verticalmente */
+    gap: 20px; /* Espaço entre os elementos */
+    padding: 20px; /* Preenchimento interno */
+}
+
+/* Estilos para a linha horizontal dos jogadores */
+.row {
+    display: flex; /* Utiliza um layout flexível */
+    justify-content: center; /* Alinha os itens ao centro horizontalmente */
+    gap: 30px; /* Espaço entre os itens */
+    flex-wrap: wrap; /* Permite a quebra de linha dos itens */
+}
+
+/* Estilos para o item individual de jogador */
+.item {
+    display: flex; /* Utiliza um layout flexível */
+    justify-content: center; /* Alinha o conteúdo ao centro horizontalmente */
+}
+
+/* Estilos para o parágrafo dentro do item de jogador */
+.item p {
+    margin-top: 10px; /* Margem superior do parágrafo */
+}
+
+/* Estilos para o botão de jogador */
+.item button {
+    display: block; /* Exibe como bloco */
+    color: white; /* Cor do texto */
+    background-color: blue; /* Cor de fundo */
+    border: 2px solid darkblue; /* Borda consistente */
+    cursor: pointer; /* Altera o cursor para indicar interatividade */
+    font-size: 20px; /* Tamanho da fonte */
+    width: 200px; /* Largura do botão */
+    height: 230px; /* Altura do botão */
+}
+
+/* Estilos para o botão de jogador no estado hover */
+.item button:hover {
+    background-color: whitesmoke; /* Cor de fundo ao passar o mouse */
+    color: darkblue; /* Cor do texto ao passar o mouse */
+}
+
+/* Estilos para o botão de jogador no estado ativo */
+.item button:active {
+    border: 2px solid darkblue; /* Borda consistente no estado ativo */
+    background-color: whitesmoke; /* Mantém a cor de fundo */
+    color: darkblue; /* Mantém a cor do texto */
+}
+
+/* Estilos para a imagem dentro do botão de jogador */
+.item button > img {
+    width: 100%; /* Largura da imagem */
+    height: 82.5%; /* Altura da imagem */
+}
+
+/* Estilos para o título da seção da equipe técnica */
+.titulo_equipatecnica {
+    display: flex; /* Utiliza um layout flexível */
+    align-items: center; /* Alinha os itens ao centro verticalmente */
+    justify-content: center; /* Alinha os itens ao centro horizontalmente */
+}
+
+/* Estilos para o texto do título da equipe técnica */
+.word_equipatecnica {
+    margin: 0 10px; /* Margem dos lados do texto */
+    color: blue; /* Cor do texto */
+    font-family: Verdana, Geneva, Tahoma, sans-serif; /* Define a fonte */
+    font-size: 50px; /* Tamanho da fonte */
+    text-align: center; /* Alinhamento centralizado */
+}
+
+/* Estilos para a linha horizontal da equipe técnica */
+.hr_equipatecnica {
+    border: 0; /* Remove a borda */
+    height: 10px; /* Altura da linha */
+    background-color: darkblue; /* Cor de fundo da linha */
+    width: 50%; /* Largura da linha */
+}
+
+/* Estilos para o item individual da equipe técnica */
+.item_equipatecnica {
+    text-align: center; /* Alinhamento centralizado do texto */
+}
+
+/* Estilos para o parágrafo dentro do item da equipe técnica */
+.item_equipatecnica p {
+    margin-top: 10px; /* Margem superior do parágrafo */
+}
+
+/* Estilos para o botão da equipe técnica */
+.item_equipatecnica button {
+    display: block; /* Exibe como bloco */
+    color: darkblue; /* Cor do texto */
+    background-color: whitesmoke; /* Cor de fundo */
+    border: 2px solid darkblue; /* Borda consistente */
+    cursor: pointer; /* Altera o cursor para indicar interatividade */
+    font-size: 17px; /* Tamanho da fonte */
+    width: 200px; /* Largura do botão */
+    height: 250px; /* Altura do botão */
+}
+
+/* Estilos para o botão da equipe técnica no estado hover */
+.item_equipatecnica button:hover {
+    background-color: darkblue; /* Cor de fundo ao passar o mouse */
+    color: white; /* Cor do texto ao passar o mouse */
+}
+
+/* Estilos para o botão da equipe técnica no estado ativo */
+.item_equipatecnica button:active {
+    border: 2px solid darkblue; /* Borda consistente no estado ativo */
+    background-color: darkblue; /* Mantém a cor de fundo */
+    color: white; /* Mantém a cor do texto */
+}
+
+/* Estilos para a imagem dentro do botão da equipe técnica */
+.item_equipatecnica button > img {
+    width: 100%; /* Largura da imagem */
+    height: 76.6%; /* Altura da imagem */
+}
+
+/* Estilos para o botão da equipe técnica na seção juniores */
+.item_equipatecnica_jun button {
+    display: block; /* Exibe como bloco */
+    color: darkblue; /* Cor do texto */
+    background-color: whitesmoke; /* Cor de fundo */
+    border: 2px solid darkblue; /* Borda consistente */
+    cursor: pointer; /* Altera o cursor para indicar interatividade */
+    font-size: 17px; /* Tamanho da fonte */
+    width: 210px; /* Largura do botão */
+    height: 250px; /* Altura do botão */
+}
+
+/* Estilos para o botão da equipe técnica na seção juniores no estado hover */
+.item_equipatecnica_jun button:hover {
+    background-color: darkblue; /* Cor de fundo ao passar o mouse */
+    color: white; /* Cor do texto ao passar o mouse */
+}
+
+/* Estilos para o botão da equipe técnica na seção juniores no estado ativo */
+.item_equipatecnica_jun button:active {
+    border: 2px solid darkblue; /* Borda consistente no estado ativo */
+    background-color: darkblue; /* Mantém a cor de fundo */
+    color: white; /* Mantém a cor do texto */
+}
+
+/* Estilos para a imagem dentro do botão da equipe técnica na seção juniores */
+.item_equipatecnica_jun button > img {
+    width: 100%; /* Largura da imagem */
+    height: 82%; /* Altura da imagem */
+}
+
+/* Media query para telas menores */
+@media (max-width: 768px){
+
+    /* Ajustes para as imagens das equipes */
+    #equipa_benjamins, #equipa_juniores, #equipa_seniores{
+        width: 95%; /* Largura da imagem ajustada */
+        height: auto; /* Altura automática */
+    }
+
+    /* Ajustes para o título principal do conteúdo */
+    .conteudo-titulo {
+        font-size: 45px; /* Tamanho da fonte reduzido */
+    }
+    
+    /* Ajustes para o subtítulo do conteúdo */
+    .conteudo-subtitulo {
+        font-size: 15px; /* Tamanho da fonte reduzido */
+    }
+    
+    /* Ajustes para o texto do título */
+    .word {
+        font-size: 25px; /* Tamanho da fonte reduzido */
+    }
+
+    /* Ajustes para o texto do título da equipe técnica */
+    .word_equipatecnica{
+        font-size: 25px; /* Tamanho da fonte reduzido */
+    }
+
+    /* Ajustes para o botão de jogador */
+    .item button {
+        font-size: 14px; /* Tamanho da fonte reduzido */
+        width: 150px; /* Largura do botão reduzida */
+        height: 170px; /* Altura do botão reduzida */
+    }
+
+    /* Ajustes para a imagem dentro do botão de jogador */
+    .item button > img {
+        width: 100%; /* Largura da imagem */
+        height: 82.5%; /* Altura da imagem */
+    }
+
+    /* Ajustes para o botão da equipe técnica */
+    .item_equipatecnica button {
+        font-size: 12px; /* Tamanho da fonte reduzido */
+        width: 150px; /* Largura do botão reduzida */
+        height: 190px; /* Altura do botão reduzida */
+    }
+
+    /* Ajustes para a imagem dentro do botão da equipe técnica */
+    .item_equipatecnica button > img {
+        width: 100%; /* Largura da imagem */
+        height: 76.6%; /* Altura da imagem */
+    }
+
+    /* Ajustes para o botão da equipe técnica na seção juniores */
+    .item_equipatecnica_jun button {
+        font-size: 12px; /* Tamanho da fonte reduzido */
+        width: 150px; /* Largura do botão reduzida */
+        height: 190px; /* Altura do botão reduzida */
+    }
+
+    /* Ajustes para a imagem dentro do botão da equipe técnica na seção juniores */
+    .item_equipatecnica_jun button > img {
+        width: 100%; /* Largura da imagem */
+        height: 82.8%; /* Altura da imagem */
+    }
+}
